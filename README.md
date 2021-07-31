@@ -11,6 +11,6 @@ Spring-Boot and Angular App designed to analyze tweets sentiment impact on stock
 
 4.Open your browser, go to http://localhost:4200/
 
-5.Pick your Stock indicator (TSLA or AAPL)
+5.Pick your Stock indicator (TSLA or AAPL, crypto indicators will be added soon) 
 
 6.Enter twitter keywords 
