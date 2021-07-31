@@ -1,0 +1,46 @@
+{
+  "groups": [
+    {
+      "name": "index",
+      "type": "com.MasterTweetsAnalysis.config.IndexSourceProperties",
+      "sourceType": "com.MasterTweetsAnalysis.config.IndexSourceProperties"
+    },
+    {
+      "name": "twitter",
+      "type": "com.MasterTweetsAnalysis.config.TwitterProperties",
+      "sourceType": "com.MasterTweetsAnalysis.config.TwitterProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "index.alpha-vantage-consumer-key",
+      "type": "java.lang.String",
+      "sourceType": "com.MasterTweetsAnalysis.config.IndexSourceProperties"
+    },
+    {
+      "name": "twitter.access-token",
+      "type": "java.lang.String",
+      "description": "OAuth access token.",
+      "sourceType": "com.MasterTweetsAnalysis.config.TwitterProperties"
+    },
+    {
+      "name": "twitter.access-token-secret",
+      "type": "java.lang.String",
+      "description": "OAuth access token secret.",
+      "sourceType": "com.MasterTweetsAnalysis.config.TwitterProperties"
+    },
+    {
+      "name": "twitter.consumer-key",
+      "type": "java.lang.String",
+      "description": "OAuth consumer key.",
+      "sourceType": "com.MasterTweetsAnalysis.config.TwitterProperties"
+    },
+    {
+      "name": "twitter.consumer-secret",
+      "type": "java.lang.String",
+      "description": "OAuth consumer secret.",
+      "sourceType": "com.MasterTweetsAnalysis.config.TwitterProperties"
+    }
+  ],
+  "hints": []
+}
