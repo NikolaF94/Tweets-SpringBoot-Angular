@@ -1,0 +1,124 @@
+<div class="container">
+   <div class="row pt-5">
+      <!-- <div class="col-md-6"> -->
+        <h3>Select Financial Indicator:</h3>
+      <ul class="index">
+         <li *ngFor="let index of indexlist" (click)="onSelect(index)">
+         <span class="badge"></span> {{index.name}}
+         </li>
+      </ul>
+      <div *ngIf="selectedIndex">
+      <h3>Indicator: {{selectedIndex.name | uppercase}} </h3>
+         <h3>Search Tweets by keyword:</h3>
+         <form  (ngSubmit)="onSubmit()"  class="form-inline md-form mr-auto mb-4" #keywordForm="ngForm">
+         <div class="form-group">
+            <input class="form-control" id="text" name="text"  [(ngModel)]="keyword.text" required #text = "ngModel" required minlength="2"  type="text" placeholder="Enter keyword"  aria-label="Search">
+            <div *ngIf="keyword.invalid && (keyword.dirty || keyword.touched)"
+               class="alert alert-danger">
+               <div *ngIf="keyword.errors.required">
+                  Keyword is required.
+               </div>
+               <div *ngIf="keyword.errors.minlength">
+                  Keyword must be at least 2 characters long.
+               </div>
+            </div>
+         </div>
+         <button type="submit"  mdbBtn size="sm" gradient="aqua" rounded="true" class="btn btn-primary" mdbWavesEffect  [disabled]="!keywordForm.form.valid" >Search</button>
+         </form>
+      </div>
+      <div class="container">
+  
+  <div #charts></div>
+  <h3>Tweets:</h3>
+  <table class="table table-striped">
+    <thead>
+        <tr>
+          <th>Date</th>
+          <th>User</th>
+          <th>Text</th>
+          <th>Sentiment</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tweet of tweets">
+        <td>{{ tweet.createdAt }}</td>
+        <td>{{ tweet.screenName }}</td>
+        <td>{{ tweet.originalText }}</td>
+        <td>{{ tweet.sentimentType }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+   <div class="row mt-5">
+      <div class="col-md-6">
+         <div class="row">
+            <!-- <div class="col-md-6 mb-3">
+               <div class="card">
+                  <div class="card-body">
+                     <h5 class="card-title">Card title</h5>
+                     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                     <a href="#" class="card-link">View Tweet</a>
+                  </div>
+               </div>
+            </div> -->
+          <!--   <div class="col-md-6 mb-3">
+               <div class="card">
+                  <div class="card-body">
+                     <h5 class="card-title">Card title</h5>
+                     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                     <a href="#" class="card-link">View Tweet</a>
+                  </div>
+               </div>
+            </div> -->
+            <!-- <div class="col-md-6 mb-3">
+               <div class="card">
+                  <div class="card-body">
+                     <h5 class="card-title">Card title</h5>
+                     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                     <a href="#" class="card-link">View Tweet</a>
+                  </div>
+               </div>
+            </div> -->
+  <!--           <div class="col-md-6 mb-3">
+               <div class="card">
+                  <div class="card-body">
+                     <h5 class="card-title">Card title</h5>
+                     <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                     <a href="#" class="card-link">View Tweet</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div> -->
+   <!--    <div class="col-md-6">
+         <div class="card">
+            <div class="card-header">
+               <h5 class="h3 mb-0">Statistics</h5>
+            </div>
+            <div class="card-body">
+               <div class="chart">
+                  <canvas id="myChart" height="200"></canvas>
+               </div>
+            </div>
+         </div>
+      </div> -->
+   </div>
+   </div>
+   
+      
+ <!--      <div><span>id: </span>{{selectedIndex.id}}</div>
+      <div>
+         <label for="index-name">Index name: </label>
+         <input id="index-name" [(ngModel)]="selectedIndex.name" placeholder="name" >
+      </div>
+   </div>
+   <div>
+   <p> Grand Total : {{ my_data | json }} </p> -->
+ <!-- </div> -->
+ 
+</div>
